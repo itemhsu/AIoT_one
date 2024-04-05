@@ -71,6 +71,37 @@ mkdir esp
 pip install esptool
 ```
 
+#### 使用 Minicom 来查看ESP32的输出
+* 安装 Minicom
+如果您还没有安装 Minicom，可以通过您的 Linux 发行版的包管理器进行安装。例如，在基于 Debian 的系统（如 Ubuntu）上，您可以使用以下命令安装：
+```
+sudo apt-get install minicom
+```
+
+对于 Amazon Linux 或基于 RHEL 的系统，使用：
+```
+sudo yum install minicom
+```
+
+* 配置 Minicom
+在启动 Minicom 之前，您需要知道您的设备连接到的串行端口号以及设备通讯的相关参数（如波特率）。通常，ESP32 等设备的默认波特率是 115200。
+
+查找设备的串行端口：您可以使用 `dmesg | grep tty` 命令来查看设备连接的串行端口。通常，设备会被标记为 `/dev/ttyUSB0` 或 `/dev/ttyACM0`。MacOS 标记为 `/dev/tty.SLAB_USBtoUART`
+
+* 配置 Minicom：运行 Minicom 的配置界面来设置串行端口参数。
+```
+sudo minicom -s
+```
+  * 在配置界面中，选择 "Serial port setup" 来设置串行端口参数。您需要设置以下几项：
+    * Serial Device: 修改为您的设备串行端口，例如 /dev/ttyUSB0。
+    * Bps/Par/Bits: 设置波特率（例如 115200）和其他通讯参数（通常为 8N1）。
+    * Exit: 退出配置界面。
+* 使用 Minicom 查看输出
+配置完成后，您可以启动 Minicom 以连接到您的设备并查看输出：
+
+* 退出 Minicom
+要退出 Minicom，您可以按 Ctrl-A 然后按 Z 键来进入 Minicom 的帮助菜单，再按 X 键退出。
+
 ### MacOS 範例
 ESP-IDF 將使用 Mac OS 上預設安裝的 Python 版本。
 
