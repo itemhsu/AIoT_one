@@ -1,6 +1,7 @@
 # AIoT_one
 AIoT第一堂
 ## 認識晶片  YD-ESP32-S3-EYE 
+ESP32-S3-EYE是一款小型人工智慧開發板，配備了ESP32-S3晶片和ESP-WHO人工智慧開發框架。 該開發板擁有2百萬像素的攝影機、一個LCD顯示器、一個麥克風，以及8MB的八線PSRAM和8MB的flash存儲，非常適合於圖像識別和音頻處理等應用 (espressif)。
 #### 外觀
 <img width="188" alt="image" src="https://github.com/itemhsu/AIoT_one/assets/25599185/b9614508-a8ab-4292-939e-a71ca91c49dc">
 <img width="162" alt="image" src="https://github.com/itemhsu/AIoT_one/assets/25599185/36f3e026-77a8-4a8b-843d-d8be1b0d645f">
