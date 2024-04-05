@@ -46,6 +46,24 @@ ESP-EYE 可在 Linux、MacOs、Windows 作業系統中完成軟體燒寫。 目�
   - URL https://049281306005.signin.aws.amazon.com/console
   - 使用者名稱 class0@NTUT
 ### AWS Linux 範例
+#### Launch SageMaker Notebook
+* use "C4-XLarge", that has 4 cpus
+#### Setting Sagemaker Enviroment
+* New a sagemaker terminal
+* Change directory: for future file operation
+```
+cd SageMaker
+```
+* Installing new software on Amazon Linux, which is based on RHEL/CentOS, typically involves using the yum package manager (for Amazon Linux 2 and earlier
+```
+sudo yum update
+sudo yum install ninja-build
+```
+cmake is already install , so we skip install cmake.
+* mkdir esp for future working
+```
+mkdir esp
+```
 
 ### MacOS 範例
 ESP-IDF 將使用 Mac OS 上預設安裝的 Python 版本。
@@ -104,6 +122,26 @@ brew install ccache
 #### 增量構建：
 * Ninja 擅長增量構建，僅重新編譯更改的文件，從而大大縮短大型專案的構建時間（Earthly - 讓構建超級簡單）。
 * 典型的工作流程包括使用 CMake (cmake -G Ninja ..) 產生 Ninja 建置文件，然後執行 Ninja 來建置專案 (ninja)。 這個過程很簡單，可以顯著加快開發週期（Earthly - 讓建置超級簡單）。
+
+### Hands on
+Creating a "Hellow world" example
+
+   20  cd esp
+   21  git clone --recursive https://github.com/espressif/esp-who.git
+   26  cd esp-who/
+   30  git clone --recursive https://github.com/espressif/esp-idf.git
+   32  cd esp-idf/
+   34  ./install.sh
+   35  more export.sh
+   36  source export.sh
+   37  source ./export.sh
+   38  pwd
+   39  cd ..
+   40  cp -r $IDF_PATH/examples/get-started/hello_world .
+   42  cd hello_world/
+   49  idf.py menuconfig
+   51  idf.py build
+
 
 
 ### 軟體獲取
