@@ -20,3 +20,31 @@ USB 接上電腦之後就會啟動
 
 <img width="753" alt="image" src="https://github.com/itemhsu/AIoT_one/assets/25599185/cc70abee-1753-42f2-8190-f01e40cb9dac">
 
+## 軟體開發
+
+ESP-EYE 可在 Linux、MacOs、Windows 作業系統中完成軟體燒寫。 目前，必須進行開發環境的工具鏈配置，詳見下方介紹。
+
+### 準備工作
+
+- 閱讀 [ESP-IDF程式指南](https://docs.espressif.com/projects/esp-idf/zh_CN/v3.1.1/get-started/index.html)，參考對應章節，設定工具鏈；
+- 準備 USB Type-C 線，用於連接 PC 和 ESP-EYE 開發板；
+- 選擇適合開發環境的工具，例如 Terminal (Linux/MacOS) 或 MinGW (Windows) 等。
+
+### 軟體獲取
+
+開啟終端機（例如 Linux 環境下的 Terminal），將軟體程式碼複製到本機：
+
+```
+git clone --recursive https://github.com/espressif/esp-who.git
+```
+
+執行以上指令會預設產生一個 `esp-who` 的資料夾。
+
+> 注意不要忘記 `--recursive` 選項。 如果你在克隆 ESP-IDF 時沒有帶這個選項，你還需要運進入對應資料夾中，執行以下指令下載對應的子模組：
+```
+git submodule update --init --recursive
+```
+
+### 設定路徑
+
+請參考[設定路徑](https://docs.espressif.com/projects/esp-idf/zh_CN/v3.1.1/get-started/index.html#get-started-setup-path)章節，將`IDF_PATH ` 設定為`esp-who/esp-idf`。
