@@ -64,6 +64,12 @@ cmake is already install , so we skip install cmake.
 ```
 mkdir esp
 ```
+#### Local install
+您需要在本機上安裝 ESP32 刷機工具。 ESP-IDF（物聯網開發框架）提供了 esptool.py，這是一個用於刷新 ESP32 裝置的 Python 實用程式。
+如果您還沒有安裝 ESP-IDF 及其工具，可以使用 pip 單獨安裝 esptool.py：
+```
+pip install esptool
+```
 
 ### MacOS 範例
 ESP-IDF 將使用 Mac OS 上預設安裝的 Python 版本。
