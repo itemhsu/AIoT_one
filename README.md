@@ -32,6 +32,8 @@ USB 接上電腦之後就會啟動
 ## 軟體開發
 
 ESP-EYE 可在 Linux、MacOs、Windows 作業系統中完成軟體燒寫。 目前，必須進行開發環境的工具鏈配置，詳見下方介紹。
+<img width="512" alt="image" src="https://github.com/itemhsu/AIoT_one/assets/25599185/4a687851-2312-4cd2-be3f-c022780da6b6">
+
 
 ### 準備工作
 
