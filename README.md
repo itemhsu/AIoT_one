@@ -26,7 +26,7 @@ ESP-EYE 可在 Linux、MacOs、Windows 作業系統中完成軟體燒寫。 目�
 
 ### 準備工作
 
-- 閱讀 [ESP-IDF程式指南](https://docs.espressif.com/projects/esp-idf/zh_CN/v3.1.1/get-started/index.html)，參考對應章節，設定工具鏈；
+- 閱讀 [ESP-IDF程式指南](https://espressif-docs.readthedocs-hosted.com/projects/esp-idf/zh-cn/latest/get-started/index.html)，參考對應章節，設定工具鏈；
 - 準備 USB Type-C 線，用於連接 PC 和 YD-ESP32-S3-EYE 開發板；
 - 選擇適合開發環境的工具，例如 Terminal (Linux/MacOS) 或 MinGW (Windows) 等。
 
