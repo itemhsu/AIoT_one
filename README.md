@@ -20,6 +20,15 @@ USB 接上電腦之後就會啟動
 
 <img width="753" alt="image" src="https://github.com/itemhsu/AIoT_one/assets/25599185/cc70abee-1753-42f2-8190-f01e40cb9dac">
 
+#### ESP32 SoC 晶片支援以下功能：
+
+* 2.4 GHz Wi-Fi
+* 藍牙 4.2
+* 高性能雙核心
+* 超低功耗協處理器
+* 多種週邊
+* 便宜
+
 ## 軟體開發
 
 ESP-EYE 可在 Linux、MacOs、Windows 作業系統中完成軟體燒寫。 目前，必須進行開發環境的工具鏈配置，詳見下方介紹。
