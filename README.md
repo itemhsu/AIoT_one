@@ -42,8 +42,14 @@ ESP-EYE 可在 Linux、MacOs、Windows 作業系統中完成軟體燒寫。 目�
 - windows 可以使用 https://dl.espressif.com/dl/esp-idf/
 - 準備 USB Type-C 線，用於連接 PC 和 YD-ESP32-S3-EYE 開發板；
 - 選擇適合開發環境的工具，例如 Terminal (Linux/MacOS) 或 MinGW (Windows) 等。
+- AWS主控台登入
+  - URL https://049281306005.signin.aws.amazon.com/console
+  - 使用者名稱 class0@NTUT
+### AWS Linux 範例
+
 ### MacOS 範例
 ESP-IDF 將使用 Mac OS 上預設安裝的 Python 版本。
+
 
 安裝 pip:
 ```
