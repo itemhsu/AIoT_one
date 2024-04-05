@@ -309,7 +309,7 @@ Restarting in 0 seconds...
 Restarting now.
 ets Jun  8 2016 00:22:57
 ```
-#### Hello_world.c
+#### hello_world_main.c
 ```c
 /*
  * SPDX-FileCopyrightText: 2010-2022 Espressif Systems (Shanghai) CO LTD
