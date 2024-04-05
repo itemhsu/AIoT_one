@@ -187,14 +187,19 @@ idf.py build
 <img width="362" alt="image" src="https://github.com/itemhsu/AIoT_one/assets/25599185/10518230-f321-413f-aa3b-3fb3a2dd2cdf">
 
 * 選擇檔案
+
 <img width="268" alt="image" src="https://github.com/itemhsu/AIoT_one/assets/25599185/2f3f6977-1953-481a-adb5-c98d29adcb55">
+
 * 點選Download
+
 <img width="133" alt="image" src="https://github.com/itemhsu/AIoT_one/assets/25599185/58bddf32-afad-46f9-95c9-8867fd9aecd9">
+
 #### 燒錄韌體
+
 * 使用 ESP-IDF 提供的燒錄工具將下載的韌體燒錄到您的裝置上。 燒錄指令可能看起來像這樣：
+  
 ```
 esptool.py --chip esp32 -p (您的设备端口，如 COM3 或 /dev/ttyUSB0) write_flash -z 0x1000 /路径/到/hello_world.bin
-
 ```
 
 ### 軟體獲取
