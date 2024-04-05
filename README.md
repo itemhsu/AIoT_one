@@ -1,6 +1,6 @@
 # AIoT_one
 AIoT第一堂
-## 認識晶片
+## 認識晶片  YD-ESP32-S3-EYE 
 #### 外觀
 <img width="188" alt="image" src="https://github.com/itemhsu/AIoT_one/assets/25599185/b9614508-a8ab-4292-939e-a71ca91c49dc">
 <img width="162" alt="image" src="https://github.com/itemhsu/AIoT_one/assets/25599185/36f3e026-77a8-4a8b-843d-d8be1b0d645f">
@@ -27,7 +27,7 @@ ESP-EYE 可在 Linux、MacOs、Windows 作業系統中完成軟體燒寫。 目�
 ### 準備工作
 
 - 閱讀 [ESP-IDF程式指南](https://docs.espressif.com/projects/esp-idf/zh_CN/v3.1.1/get-started/index.html)，參考對應章節，設定工具鏈；
-- 準備 USB Type-C 線，用於連接 PC 和 ESP-EYE 開發板；
+- 準備 USB Type-C 線，用於連接 PC 和 YD-ESP32-S3-EYE 開發板；
 - 選擇適合開發環境的工具，例如 Terminal (Linux/MacOS) 或 MinGW (Windows) 等。
 
 ### 軟體獲取
