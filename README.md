@@ -213,7 +213,11 @@ idf.py build
 ### Image Flashing Hands on 
 要把 AWS 云上的 Amazon Linux 环境中构建的 ESP32 项目烧录到您本地的设备上，您需要通过以下几个步骤操作：
 #### 下载构建结果
-* 将构建好的固件（通常是 .bin 文件）从您的云服务器下载到您的本地计算机。您可以使用 SageMaker Download 。例如，選取路徑如下：
+* 将构建好的固件（通常是 .bin 文件）从您的云服务器下载到您的本地计算机。您可以使用 SageMaker Download 。有三個檔案要下載
+  *  build/partition_table/partition-table.bin 
+  *  build/bootloader/bootloader.bin
+  *  build/hello_world.bin
+* 例如，選取路徑如下：
 
 <img width="362" alt="image" src="https://github.com/itemhsu/AIoT_one/assets/25599185/10518230-f321-413f-aa3b-3fb3a2dd2cdf">
 
@@ -230,24 +234,78 @@ idf.py build
 * 使用 ESP-IDF 提供的燒錄工具將下載的韌體燒錄到您的裝置上。 燒錄指令可能看起來像這樣：
   
 ```
-esptool.py --chip esp32 -p (您的设备端口，如 COM3 或 /dev/ttyUSB0) write_flash -z 0x1000 /路径/到/hello_world.bin
+esptool.py --chip esp32 -p /dev/tty.SLAB_USBtoUART  write_flash -z 0x1000 ./bootloader.bin 0x8000 ./partition-table.bin  0x10000 ./hello_world.bin
 ```
-
-### 軟體獲取
-
-開啟終端機（例如 Linux 環境下的 Terminal），將軟體程式碼複製到本機：
-
+#### 執行結果（minicom）
 ```
-git clone --recursive https://github.com/espressif/esp-who.git
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7176
+load:0x40078000,len:15564
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+I (31) boot: ESP-IDF v5.3-dev-3220-g9c99a385ad 2nd stage bootloader
+I (31) boot: compile time Apr  5 2024 08:51:47
+I (33) boot: Multicore bootloader
+I (37) boot: chip revision: v1.0
+I (41) boot.esp32: SPI Speed      : 40MHz
+I (45) boot.esp32: SPI Mode       : DIO
+I (50) boot.esp32: SPI Flash Size : 2MB
+I (54) boot: Enabling RNG early entropy source...
+I (60) boot: Partition Table:
+I (63) boot: ## Label            Usage          Type ST Offset   Length
+I (71) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (78) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (86) boot:  2 factory          factory app      00 00 00010000 00100000
+I (93) boot: End of partition table
+I (97) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=09414h ( 37908) map
+I (119) esp_image: segment 1: paddr=0001943c vaddr=3ffb0000 size=02200h (  8704) load
+I (122) esp_image: segment 2: paddr=0001b644 vaddr=40080000 size=049d4h ( 18900) load
+I (132) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=13850h ( 79952) map
+I (161) esp_image: segment 4: paddr=00033878 vaddr=400849d4 size=077ech ( 30700) load
+I (179) boot: Loaded app from partition at offset 0x10000
+I (179) boot: Disabling RNG early entropy source...
+I (191) cpu_start: Multicore app
+I (199) cpu_start: Pro cpu start user code
+I (199) cpu_start: cpu freq: 160000000 Hz
+I (200) app_init: Application information:
+I (202) app_init: Project name:     hello_world
+I (208) app_init: App version:      1
+I (212) app_init: Compile time:     Apr  5 2024 08:52:04
+I (218) app_init: ELF file SHA256:  bb6384479...
+I (223) app_init: ESP-IDF:          v5.3-dev-3220-g9c99a385ad
+I (230) efuse_init: Min chip rev:     v0.0
+I (234) efuse_init: Max chip rev:     v3.99
+I (239) efuse_init: Chip rev:         v1.0
+I (245) heap_init: Initializing. RAM available for dynamic allocation:
+I (252) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM
+I (258) heap_init: At 3FFB2AC8 len 0002D538 (181 KiB): DRAM
+I (264) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (270) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (277) heap_init: At 4008C1C0 len 00013E40 (79 KiB): IRAM
+I (284) spi_flash: detected chip: generic
+I (287) spi_flash: flash io: dio
+W (291) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the.
+I (305) main_task: Started on CPU0
+I (315) main_task: Calling app_main()
+Hello world!
+This is esp32 chip with 2 CPU core(s), WiFi/BTBLE, silicon revision v1.0, 2MB external flash
+Minimum free heap size: 305360 bytes
+Restarting in 10 seconds...
+Restarting in 9 seconds...
+Restarting in 8 seconds...
+Restarting in 7 seconds...
+Restarting in 6 seconds...
+Restarting in 5 seconds...
+Restarting in 4 seconds...
+Restarting in 3 seconds...
+Restarting in 2 seconds...
+Restarting in 1 seconds...
+Restarting in 0 seconds...
+Restarting now.
+ets Jun  8 2016 00:22:57
 ```
-
-執行以上指令會預設產生一個 `esp-who` 的資料夾。
-
-> 注意不要忘記 `--recursive` 選項。 如果你在克隆 ESP-IDF 時沒有帶這個選項，你還需要運進入對應資料夾中，執行以下指令下載對應的子模組：
-```
-git submodule update --init --recursive
-```
-
-### 設定路徑
-
-請參考[設定路徑](https://docs.espressif.com/projects/esp-idf/zh_CN/v3.1.1/get-started/index.html#get-started-setup-path)章節，將`IDF_PATH ` 設定為`esp-who/esp-idf`。
