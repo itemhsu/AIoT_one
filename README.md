@@ -42,7 +42,7 @@ ESP-EYE 可在 Linux、MacOs、Windows 作業系統中完成軟體燒寫。 目�
 - windows 可以使用 https://dl.espressif.com/dl/esp-idf/
 - 準備 USB Type-C 線，用於連接 PC 和 YD-ESP32-S3-EYE 開發板；
 - 選擇適合開發環境的工具，例如 Terminal (Linux/MacOS) 或 MinGW (Windows) 等。
-#### MacOS 範例
+### MacOS 範例
 ESP-IDF 將使用 Mac OS 上預設安裝的 Python 版本。
 
 安裝 pip:
@@ -62,6 +62,43 @@ brew install cmake ninja
 ```
 brew install ccache
 ```
+### CMake 介紹
+ CMake是一個開源的跨平台自動化建置系統，它使用一個名為CMakeLists.txt的檔案來描述建置流程，可以產生標準的建置文件，例如Unix的Makefile或Windows的專案檔案。 以下是CMake的一些關鍵特性和基礎概念的簡介：
+
+#### 關鍵特性
+* 跨平台支援：CMake支援多種平台，包括但不限於Linux、macOS、Windows。
+* 生成器：CMake可以產生多種編譯器和IDE的專案文件，如Makefile、Ninja、Visual Studio專案檔等。
+* 可擴充：透過編寫模組和函數，可以擴展CMake的功能。
+#### 基礎概念
+* 變數：CMake中的變數用於儲存訊息，可以在CMakeLists.txt檔案中設定和引用。
+* 指令：CMake腳本由一系列指令組成，每個指令代表一個操作，如設定變數、新增庫等。
+* 目標：目標是建置過程中的關鍵概念，可以是執行檔、庫檔等。
+* 屬性：目標、測試、目錄和全域等可以有屬性，屬性用來定義特定行為。
+#### 開始使用
+* 安裝CMake：首先，需要在你的系統上安裝CMake。
+* 撰寫CMakeLists.txt檔案：這是CMake專案的核心文件，描述如何建構專案。
+* 設定專案：使用cmake命令列工具對專案進行配置，產生建置檔。
+* 建置專案：透過產生的建置檔案（如Makefile）建置專案。
+
+### Ninja  介紹
+是一個緊湊且快速的建置系統，旨在盡快處理專案建置。 與許多傳統的建置系統不同，Ninja 以其簡單性和高效性而著稱，使其成為需要快速迭代周期的大型專案的首選。 以下介紹了 Ninja 的脫穎而出之處：
+
+#### 主要特徵：
+* 速度：忍者註重速度。 它透過避免不必要的工作並優化增量建置的建置過程來實現這一點。
+* 簡單性：雖然 Ninja 建立檔案是人類可讀的，但它們並不適合手寫。 相反，它們是由 CMake 等更高層級的建置系統產生的，提供簡單且高效的工作流程（Ninja Build）。
+#### 何時使用Ninja：
+* Ninja 本身並不是一個成熟的建造系統，而是被設計為用作更大的建造系統的一部分。 它對於需要最小化建置時間的專案特別有益，例如 Google Chrome 和 Android 的一部分（Ninja Build）。
+* 對於需要快速、可靠且最小設定來編譯程式碼的開發人員來說，它是理想的選擇（Ninja Build）。
+#### Ninja的工作原理：
+* Ninja 建構在 build.ninja 檔案中進行描述，其中包括檔案應如何編譯的規則以及檔案之間的依賴關係（CnBlogs）。
+* 它使用簡單的語法來定義建置規則和依賴項，從而最佳化增量建置。 當檔案變更時，Ninja 僅重建受該變更影響的專案部分（CnBlogs）（維基百科）。
+#### Ninja入門：
+* 安裝：Ninja 可以使用macOS 上的Homebrew（brew install ninja）、Windows 上的Chocolatey（choco install ninja）等套件管理器進行安裝，或者透過Conda 和Pip（Earthly - 讓建置超級簡單）等其他套件管理器進行安裝。
+* 建立您的第一個專案：要使用 Ninja 建置項目，您通常需要 CMake 等更高層級的建置系統來產生 build.ninja 檔案。 檔案產生後，您可以執行 Ninja 來編譯專案（Earthly - 讓建置超級簡單）。
+#### 增量構建：
+* Ninja 擅長增量構建，僅重新編譯更改的文件，從而大大縮短大型專案的構建時間（Earthly - 讓構建超級簡單）。
+* 典型的工作流程包括使用 CMake (cmake -G Ninja ..) 產生 Ninja 建置文件，然後執行 Ninja 來建置專案 (ninja)。 這個過程很簡單，可以顯著加快開發週期（Earthly - 讓建置超級簡單）。
+
 
 ### 軟體獲取
 
