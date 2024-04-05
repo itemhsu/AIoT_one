@@ -129,25 +129,67 @@ brew install ccache
 * Ninja 擅長增量構建，僅重新編譯更改的文件，從而大大縮短大型專案的構建時間（Earthly - 讓構建超級簡單）。
 * 典型的工作流程包括使用 CMake (cmake -G Ninja ..) 產生 Ninja 建置文件，然後執行 Ninja 來建置專案 (ninja)。 這個過程很簡單，可以顯著加快開發週期（Earthly - 讓建置超級簡單）。
 
-### Hands on
+### Project Building Hands on 
 Creating a "Hellow world" example
+* 切換到名為 esp 的目錄：
+```
+cd esp
+```
+* 遞歸克隆 esp-who 專案的 Git 儲存庫：
+```
+git clone --recursive https://github.com/espressif/esp-who.git
+```
+* 遞歸克隆 esp-idf 專案的 Git 儲存庫：
+```
+git clone --recursive https://github.com/espressif/esp-idf.git
+```
+* 切換到 esp-idf 目錄：
+```
+cd esp-idf/
+```
+* 執行 install.sh 腳本，安裝開發環境：
+```
+./install.sh
+```
+* 執行 export.sh 腳本，設置環境變量：
+```
+source export.sh
+```
+* 返回上一級目錄：
+```
+cd ..
+```
 
-   20  cd esp
-   21  git clone --recursive https://github.com/espressif/esp-who.git
-   26  cd esp-who/
-   30  git clone --recursive https://github.com/espressif/esp-idf.git
-   32  cd esp-idf/
-   34  ./install.sh
-   35  more export.sh
-   36  source export.sh
-   37  source ./export.sh
-   38  pwd
-   39  cd ..
-   40  cp -r $IDF_PATH/examples/get-started/hello_world .
-   42  cd hello_world/
-   49  idf.py menuconfig
-   51  idf.py build
+* 從 IDF_PATH 環境變量指定的路徑復制 hello_world 範例到當前目錄：
+```
+cp -r $IDF_PATH/examples/get-started/hello_world .
+```
+* 切換到 hello_world 目錄：
+```
+cd hello_world/
+```
 
+* 執行 idf.py 工具進行配置（例如設置項目參數）：
+```
+idf.py menuconfig
+```
+
+* 使用 idf.py 工具構建項目：
+```
+idf.py build
+```
+
+### Image Flashing Hands on 
+要把 AWS 云上的 Amazon Linux 环境中构建的 ESP32 项目烧录到您本地的设备上，您需要通过以下几个步骤操作：
+#### 下载构建结果
+* 将构建好的固件（通常是 .bin 文件）从您的云服务器下载到您的本地计算机。您可以使用 SageMaker Download 。例如，選取路徑如下：
+
+<img width="362" alt="image" src="https://github.com/itemhsu/AIoT_one/assets/25599185/10518230-f321-413f-aa3b-3fb3a2dd2cdf">
+
+* 選擇檔案
+<img width="268" alt="image" src="https://github.com/itemhsu/AIoT_one/assets/25599185/2f3f6977-1953-481a-adb5-c98d29adcb55">
+* 點選Download
+<img width="133" alt="image" src="https://github.com/itemhsu/AIoT_one/assets/25599185/58bddf32-afad-46f9-95c9-8867fd9aecd9">
 
 
 ### 軟體獲取
