@@ -212,6 +212,7 @@ idf.py menuconfig
 
 * 使用 idf.py 工具構建項目：
 ```
+idf.py fullclean
 idf.py build
 ```
 
