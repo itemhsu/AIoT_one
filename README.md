@@ -208,6 +208,7 @@ cd hello_world/
 ```
 idf.py menuconfig
 ```
+<img width="513" alt="image" src="https://github.com/itemhsu/AIoT_one/assets/25599185/cd5da1d0-5404-4e36-82f2-ad104b90d7fe">
 
 * 使用 idf.py 工具構建項目：
 ```
