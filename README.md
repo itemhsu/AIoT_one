@@ -236,10 +236,14 @@ idf.py build
 
 #### 燒錄韌體
 
-* 使用 ESP-IDF 提供的燒錄工具將下載的韌體燒錄到您的裝置上。 燒錄指令可能看起來像這樣：
+* 使用 ESP-IDF 提供的燒錄工具將下載的韌體燒錄到您的裝置上。 esp32燒錄指令可能看起來像這樣：
   
 ```
 esptool.py --chip esp32 -p /dev/tty.SLAB_USBtoUART  write_flash -z 0x1000 ./bootloader.bin 0x8000 ./partition-table.bin  0x10000 ./hello_world.bin
+```
+* esp32s3 燒錄指令可能看起來像這樣：
+```
+esptool.py --chip esp32s3 -p /dev/tty.usbmodem11301  write_flash -z 0x1000 ./bootloader.bin 0x8000 ./partition-table.bin  0x10000 ./hello_world.bin
 ```
 #### 執行結果（minicom）
 ```
