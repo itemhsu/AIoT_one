@@ -78,6 +78,7 @@ examples/
 | 項目 | 分數 |
 | --- | --- |
 | Terminal 範例執行成功 | 60 |
+| 復原範例執行成功 | +10 |
 | 完成Terminal 範例 Markdown 操作手冊 | +5 | 
 | LCD 範例執行成功 | +5 |
 | 完成LCD 範例 Markdown 操作手冊 | +5 | 
