@@ -215,6 +215,10 @@ idf.py menuconfig
 idf.py fullclean
 idf.py build
 ```
+注意構建後的燒錄指令
+
+<img width="1133" alt="image" src="https://github.com/itemhsu/AIoT_one/assets/25599185/65dba0ad-f191-46ef-8665-6b4b2c273061">
+
 
 ### Image Flashing Hands on 
 要把 AWS 云上的 Amazon Linux 环境中构建的 ESP32 项目烧录到您本地的设备上，您需要通过以下几个步骤操作：
