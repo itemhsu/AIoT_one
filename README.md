@@ -30,6 +30,67 @@ USB 接上電腦之後就會啟動
 * 多種週邊
 * 便宜
 
+## 期末評分
+### 現有的範例
+```
+examples/
+├── cat_face_detection
+│   ├── lcd
+│   ├── README.rst
+│   ├── terminal
+│   └── web
+├── code_recognition
+│   ├── CMakeLists.txt
+│   ├── main
+│   ├── README.md
+│   ├── sdkconfig.defaults
+│   ├── sdkconfig.defaults.esp32
+│   ├── sdkconfig.defaults.esp32s2
+│   └── sdkconfig.defaults.esp32s3
+├── color_detection
+│   ├── lcd
+│   ├── README_CN.md
+│   └── README.md
+├── esp32-s3-eye
+│   ├── CMakeLists.txt
+│   ├── main
+│   ├── partitions.csv
+│   ├── README_CN.md
+│   ├── README.md
+│   └── sdkconfig.defaults
+├── human_face_detection
+│   ├── lcd
+│   ├── README.rst
+│   ├── terminal
+│   └── web
+├── human_face_recognition
+│   ├── lcd
+│   ├── README_CN.md
+│   ├── README.md
+│   └── terminal
+└── motion_detection
+    ├── lcd
+    ├── README.rst
+    ├── terminal
+    └── web
+```
+### 評分方式
+| 項目 | 分數 |
+| --- | --- |
+| Terminal 範例執行成功 | 60 |
+| 完成Terminal 範例 Markdown 操作手冊 | +5 | 
+| LCD 範例執行成功 | +5 |
+| 完成LCD 範例 Markdown 操作手冊 | +5 | 
+| WEB 範例執行成功 | +5 |
+| 完成WEB 範例 Markdown 操作手冊 | +5 | 
+| 修改代碼成功 | +5 |
+| 完成修改代碼操作手冊 | +5 | 
+| 更新模型成功 | +10 |
+| 完成更新模型操作手冊 | +5 | 
+| 自訓練模型成功 | +10 |
+| 完成自訓練模型操作手冊 | +5 | 
+
+
 ## 軟體開發
 
 ESP-EYE 可在 Linux、MacOs、Windows 作業系統中完成軟體燒寫。 目前，必須進行開發環境的工具鏈配置，詳見下方介紹。
