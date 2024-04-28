@@ -46,6 +46,9 @@ ESP-EYE 可在 Linux、MacOs、Windows 作業系統中完成軟體燒寫。 目�
   - URL https://049281306005.signin.aws.amazon.com/console
   - 使用者名稱 class0@NTUT
 ### AWS Linux 範例
+請使用這一區
+<img width="331" alt="image" src="https://github.com/itemhsu/AIoT_one/assets/25599185/7c7799d4-8784-418d-aafd-65d8c1684f92">
+
 #### Launch SageMaker Notebook
 * use "C4-XLarge", that has 4 cpus
 #### Setting Sagemaker Enviroment
