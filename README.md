@@ -268,6 +268,7 @@ cd hello_world/
 
 * 執行 idf.py 工具進行配置（例如設置項目參數）：
 ```
+idf.py set-target esp32s3
 idf.py menuconfig
 ```
 <img width="513" alt="image" src="https://github.com/itemhsu/AIoT_one/assets/25599185/cd5da1d0-5404-4e36-82f2-ad104b90d7fe">
