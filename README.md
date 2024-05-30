@@ -250,7 +250,7 @@ cd esp-idf/
 ```
 * 執行 export.sh 腳本，設置環境變量：
 ```
-source export.sh
+source ./export.sh
 ```
 * 返回上一級目錄：
 ```
